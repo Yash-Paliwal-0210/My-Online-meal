@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Website</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" media="screen and (max-width:1328px)" href="phone.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    :root {
+      --navbar-height: 59px;
+    }
+
+    #navbar {
+      position: relative;
+      display: flex;
+      align-items: center;
+      top: 0px;
+      width: 100%;
+
+    }
+
+    #logo {
+      margin: 10px 34px;
+
+    }
+
+    #logo img {
+      height: 59px;
+      margin: 3px 6px;
+    }
+
+    #navbar ul {
+      display: flex;
+      margin: 0 10px;
+      gap: 15px;
+    }
+
+    #navbar ul li {
+      list-style: none;
+      font-size: 1.3rem;
+    }
+
+    #navbar ul li a {
+      color: white;
+      display: block;
+      /* padding: 3px 22px; */
+      border-radius: 20px;
+      text-decoration: none;
+    }
+
+    #navbar ul li a:hover {
+      color: black;
+      background-color: white;
+    }
+
+    #navbar::before {
+      content: '';
+      background-color: black;
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      opacity: 0.7;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+    #home {
+      display: flex;
+      flex-direction: column;
+      /* padding: 0% 2%; */
+      justify-content: center;
+      align-items: center;
+      height: 479px;
+      max-width: 60%;
+      margin: auto;
+    }
+
+    #home::before {
+      content: '';
+      background-image: url(images/bg1.jpg);
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 572px;
+      width: 100%;
+      opacity: 0.89;
+      z-index: -1;
+
+    }
+
+    #home h1 {
+      color: white;
+      text-align: center;
+    }
+
+    #home p {
+      color: white;
+      text-align: center;
+      font-size: 1rem;
+    }
+
+    .h-primary {
+      font-size: 2.8rem;
+      /* padding: 12px; */
+      margin: 20px 0px;
+    }
+
+    .h-secondary {
+      font-size: 1.8rem;
+      padding: 12px;
+    }
+
+    .btn {
+      padding: 6px 20px;
+      border: 2px solid white;
+      background-color: brown;
+      color: white;
+      margin: 17px;
+      font-size: 1.2rem;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+
+    .center {
+      text-align: center;
+    }
+
+    #services {
+      margin: 8px 40px;
+      display: flex;
+      margin-bottom: 30px;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    #services .box {
+      width: 350px;
+      border: 2px solid brown;
+      background-color: rgb(231, 208, 176);
+      border-radius: 10px;
+      padding: 24px;
+      margin: auto;
+    }
+
+    #services .box img {
+      background: transparent;
+      display: block;
+      margin: auto;
+      height: 156px;
+      /* width: 100px; */
+    }
+
+    #services .box p {}
+
+    #client-section {
+      position: relative;
+    }
+
+    #client-section::before {
+      content: "";
+      position: absolute;
+      background: url(images/bg3.jpeg);
+      background-repeat: no-repeat;
+
+      width: 100%;
+      background-size: cover;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.3;
+    }
+
+    #clients img {
+      height: 154px;
+      border-radius: 50%;
+    }
+
+    #clients {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      padding-bottom: 50px;
+    }
+
+    #contact {
+      position: relative;
+      width: 100%;
+    }
+
+    #contact::before {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      opacity: 0.4;
+      background-image: url(images/bg2.jpeg);
+      background-size: cover;
+      background-repeat: no-repeat;
+
+    }
+
+    footer {
+      background-color: black;
+      color: white;
+      padding: 12px;
+    }
+
+    #contact-box {
+      display: flex;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      padding-bottom: 40px;
+    }
+
+    #contact-box form {
+      width: 40%;
+    }
+
+    #contact h1 {
+      margin: 0;
+    }
+
+    #contact-box label {
+      font-size: 1.3rem;
+    }
+
+    #contact-box input,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border-radius: 9px;
+      font-size: 1.1rem;
+      border-style: none;
+    }
+
+    #contact-box input[type="submit"] {
+      width: 40%;
+      text-align: center;
+    }
+
+    @media screen and (max-width : 768px) {
+      #navbar{
+        flex-direction: column;
+      }
+      #logo {
+        margin: 0;
+      }
+
+      #home {
+        max-width: 95%;
+      }
+
+      #navbar ul li a {
+        font-size: 16px;
+      }
+
+      #navbar ul {
+        margin-bottom: 2%;
+      }
+
+      #contact-box form {
+        width: 80%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav id="navbar">
+    <div id="logo">
+      <img src="images\man.png" alt="not available">
+    </div>
+
+    <ul>
+      <li class="item"><a href="#">Home</a></li>
+      <li class="item"><a href="#">Services</a></li>
+      <li class="item"><a href="#">About Us</a></li>
+      <li class="item"><a href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+  <section id="home">
+    <h1 class="h-primary">Welcome to MyOnlineMeal</h1>
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptas fugit libero repellendus, at autem nisi minima
+      magni quia quisquam asperiores eveniet ratione nostrum id itaque, corporis velit quos nemo adipisci! Quisquam,
+      ipsum.
+    </p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+    <button class="btn">Order Now</button>
+  </section>
+  <section class="services-container">
+    <h1 class="h-primary center">Our Services</h1>
+    <div id="services">
+      <div class="box">
+        <img src="images/img1.png" alt="">
+        <h2 class="h-secondary center">Food Catering</h2>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis veritatis voluptas nostrum at
+          iusto quam consequuntur officia vel reiciendis placeat.</p>
+      </div>
+      <div class="box">
+        <img src="images/img1.png" alt="">
+        <h2 class="h-secondary center">Bulk Ordering</h2>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis veritatis voluptas nostrum at
+          iusto quam consequuntur officia vel reiciendis placeat.</p>
+      </div>
+      <div class="box">
+        <img src="images/img1.png" alt="">
+        <h2 class="h-secondary center">Food Ordering</h2>
+        <p class="center">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis veritatis voluptas nostrum at
+          iusto quam consequuntur officia vel reiciendis placeat.</p>
+      </div>
+    </div>
+  </section>
+  <section id="client-section">
+    <h1 class="h-primary center">Our Clients</h1>
+    <div id="clients">
+      <div class="client-item">
+        <img src="images/icon1.png" alt="">
+      </div>
+      <div class="client-item">
+        <img src="images/icon1.png" alt="">
+      </div>
+      <div class="client-item">
+        <img src="images/icon1.png" alt="">
+      </div>
+      <div class="client-item">
+        <img src="images/icon1.png" alt="">
+      </div>
+      <div class="client-item">
+        <img src="images/icon1.png" alt="">
+      </div>
+      <div class="client-item">
+        <img src="images/icon1.png" alt="">
+      </div>
+    </div>
+
+  </section>
+  <section id="contact">
+    <h1 class="h-primary center">Contact Us</h1>
+    <div id="contact-box">
+      <form action="">
+        <div class="form-group">
+          <label for="name">Name:</label>
+          <input type="text" name="" id="name" placeholder="Enter Your Name">
+
+        </div>
+        <div class="form-group">
+          <label for="name">E-mail:</label>
+          <input type="email" name="" id="email" placeholder="Enter Your Mail">
+
+        </div>
+        <div class="form-group">
+          <label for="name">Phone:</label>
+          <input type="phone" name="" id="phone" placeholder="Enter Your Phone">
+
+        </div>
+        <div class="form-group">
+          <label for="name">Message:</label>
+          <textarea name="message" id="message" cols="30" rows="10"></textarea>
+
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit">
+        </div>
+      </form>
+    </div>
+  </section>
+  <footer>
+    <div class="center">
+      Copyright &copy; www.myonlinemeal.com. All rights reserved!
+
+    </div>
+  </footer>
+
+</body>
+
+</html>

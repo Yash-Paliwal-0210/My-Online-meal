@@ -1,0 +1,23 @@
+#home {
+    height: 45vh;
+
+}
+#home::before {
+    height: 60vh;
+
+}
+#home p{
+    font-size: 13px;
+}
+
+#services{
+
+}
+#services {
+    /* flex-direction: column; */
+
+}
+
+#clients {
+    overflow: hidden;
+}
